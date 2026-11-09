@@ -4,10 +4,25 @@
 This card can use either a direct feed from an ADSB source, or a Home Assistant sensor that pulls data from a feed. Many remote feeds won't allow a web page to pull them in, based on CORS configuration, so this handles that by having the Home Assistant sensor read the data.  A rest.yaml configuration file example is shown below.
 
 ## Installation
- 1. Copy the card to /config/www/aero-visitors-card.js
- 2. Add /local/aero-visitors-card.js as a JavaScript module resource
- 3. Put aircraft images in /config/www/aircraft/ with the cloud.svg
- 4. Aircraft should be 1500x100 roughly.  PNG with transparent background is best
+
+### HACS (recommended)
+
+1. In Home Assistant, open **HACS**.
+2. Open the three-dot menu and choose **Custom repositories**.
+3. Add `ex247/AeroVisitors` and choose **Dashboard** as the category.
+4. Find **AeroVisitors** in HACS and download it.
+
+HACS installs the card and its aircraft artwork together, and registers the dashboard resource automatically. No manual image copying or resource entry is needed.
+
+### Manual installation
+
+1. Copy `aero-visitors-card.js` to `/config/www/aero-visitors-card.js`.
+2. Add `/local/aero-visitors-card.js` as a JavaScript module resource.
+3. Put aircraft images in `/config/www/aircraft/`, including `cloud.svg`.
+
+Aircraft images should be roughly 1500x100 pixels. Transparent PNGs work best.
+
+The card resolves its default artwork folder relative to its own JavaScript file, so both the HACS and manual layouts work without changing `image_path`.
  
  Images are named by ICAO aircraft type:
    A320.png, B738.png, C172.png
