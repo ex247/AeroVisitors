@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100">
+  <defs>
+    <linearGradient id="cloud-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#edf2f6"/>
+      <stop offset="100%" stop-color="#bcc9d5"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M38 78
+       C23 78 13 68 13 55
+       C13 42 23 32 36 32
+       C40 17 53 9 68 12
+       C81 14 90 23 93 35
+       C98 31 104 29 111 30
+       C124 31 133 41 134 53
+       C144 54 150 60 150 67
+       C150 74 144 78 134 78
+       Z"
+    fill="url(#cloud-fill)"
+    stroke="#98a9b8"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M41 33 C46 20 58 16 69 19"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="4"
+    stroke-linecap="round"
+    opacity=".8"
+  />
+
+  <path
+    d="M29 69 C55 73 109 73 135 69"
+    fill="none"
+    stroke="#a4b5c4"
+    stroke-width="3"
+    stroke-linecap="round"
+    opacity=".3"
+  />
+</svg>
