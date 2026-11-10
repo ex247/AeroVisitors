@@ -18,9 +18,9 @@ If aircraft still appear as silhouettes after an update, use HACS to **Redownloa
 
 ### Manual installation
 
-1. Copy `aero-visitors-card.js` to `/config/www/aero-visitors-card.js`.
-2. Add `/local/aero-visitors-card.js` as a JavaScript module resource.
-3. Put aircraft images in `/config/www/aircraft/`, including `cloud.svg`.
+1. Copy `dist/aero-visitors-card.js` to `/config/www/aero-visitors-card.js`.
+2. Copy the contents of `dist/aircraft/` to `/config/www/aircraft/`, including `cloud.svg`.
+3. Add `/local/aero-visitors-card.js` as a JavaScript module resource.
 
 Aircraft images should be roughly 1500x100 pixels. Transparent PNGs work best.
 
