@@ -10,10 +10,12 @@
  *   weather    -  aircraft and cloud layers positioned by altitude, based on METAR data
  *
  * Install:
- *   1. Copy to /config/www/aero-visitors-card.js
- *   2. Add /local/aero-visitors-card.js as a JavaScript module resource on the  Dashboards screen. Three dot menu in the upper right corner. 
- *   3. Put aircraft images in /config/www/aircraft/
- *   4. aircraft should be 1500x100 roughly.  PNG with transparent background is best
+ * HACS install: install AeroVisitors as a Dashboard repository. HACS adds the resource automatically.
+ * Manual install:
+ *   1. Copy this file to /config/www/aero-visitors-card.js
+ *   2. Add /local/aero-visitors-card.js as a JavaScript module resource.
+ *   3. Put aircraft images in /config/www/aircraft/ (including cloud.svg).
+ *   4. Aircraft images should be roughly 1500x100; transparent PNG works best.
  *
  * Images are named by ICAO aircraft type:
  *   A320.png, B738.png, C172.png
@@ -57,7 +59,8 @@ const VIEWS = ['plate', 'cluster', 'stacked', 'metar'];
 const METAR_ATTRIBUTION =
   'Weather data from NOAA National Weather Service and Datamask Aviation.';
 
-const CLOUD_IMAGE_URL = '/local/aircraft/cloud.svg';
+const AIRCRAFT_ASSET_PATH = new URL('./aircraft/', import.meta.url).pathname.replace(/\/$/, '');
+const CLOUD_IMAGE_URL = new URL('./aircraft/cloud.svg', import.meta.url).pathname;
 
 const CLOUD_DEFINITIONS = {
   FEW: {  percent: 20, label: 'Few clouds' },
@@ -180,7 +183,7 @@ const DEFAULTS = {
   sun_entity: 'sun.sun',
   weather_entity: '',
 
-  image_path: '/local/aircraft',
+  image_path: AIRCRAFT_ASSET_PATH,
   image_ext: 'png',
   image_fallback: 'default',
   image_faces: 'right',

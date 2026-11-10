@@ -14,6 +14,8 @@ This card can use either a direct feed from an ADSB source, or a Home Assistant 
 
 HACS installs the card and its aircraft artwork together, and registers the dashboard resource automatically. No manual image copying or resource entry is needed.
 
+If aircraft still appear as silhouettes after an update, use HACS to **Redownload** AeroVisitors, then verify that `www/community/AeroVisitors/aircraft/` contains the image files. Reload the dashboard after the download completes. The card and artwork must come from the same distribution version.
+
 ### Manual installation
 
 1. Copy `aero-visitors-card.js` to `/config/www/aero-visitors-card.js`.
